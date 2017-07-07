@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font: 14px/20px Helvetica, sans-serif, arial;
+}
+ul,
+li {
+  list-style: none;
+}
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+}
+.content-wrapper {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 60px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.content-wrapper .song-img {
+  width: 50%;
+  height: 0;
+  padding-top: 50%;
+  margin: 0 auto 40px;
+  position: relative;
+}
+.content-wrapper .song-img .img-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.content-wrapper .song-img .img-wrapper img {
+  width: 100%;
+  height: 100%;
+}
+.content-wrapper .song-info {
+  text-align: center;
+  height: 126px;
+}
+.content-wrapper .song-info .song-name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 8px;
+}
+.content-wrapper .song-info .singer-name,
+.content-wrapper .song-info .album-name {
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.content-wrapper .play-area {
+  display: flex;
+}
+.content-wrapper .play-area .current-time,
+.content-wrapper .play-area .all-time {
+  height: 40px;
+  line-height: 40px;
+  width: 60px;
+  color: white;
+  text-align: center;
+}
+.content-wrapper .play-area .pro-wrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.content-wrapper .play-area .pro-wrapper .pro-top,
+.content-wrapper .play-area .pro-wrapper .pro-bottom {
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 20px;
+}
+.content-wrapper .play-area .pro-wrapper .pro-bottom {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.content-wrapper .play-area .pro-wrapper .pro-top {
+  transform: translateX(-100%);
+  background-color: #fff;
+}
+.content-wrapper .play-area .pro-wrapper .pro-top .slide-point {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+.content-wrapper .play-area .pro-wrapper .pro-top .slide-point::after {
+  height: 5px;
+  width: 5px;
+  content: "";
+  border-radius: 50%;
+  background-color: #fff;
+}
+.content-wrapper .play-control {
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+}
+.content-wrapper .play-control .btn-wrapper {
+  flex: 1;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 50%;
+}
+.content-wrapper .play-control .like-btn {
+  background-image: url(/img/icon-like.png);
+}
+.content-wrapper .play-control .like-btn.liked {
+  background-image: url(/img/icon-like-solid.png);
+}
+.content-wrapper .play-control .prev-btn {
+  background-image: url(/img/icon-prev.png);
+}
+.content-wrapper .play-control .play-btn {
+  background-image: url(/img/icon-play.png);
+}
+.content-wrapper .play-control .play-btn.playing {
+  background-image: url(/img/icon-pause.png);
+}
+.content-wrapper .play-control .next-btn {
+  background-image: url(/img/icon-next.png);
+}
+.content-wrapper .play-control .list-btn {
+  background-image: url(/img/icon-list.png);
+}
+.play-list {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  bottom: 0;
+  transform: translateY(100%);
+  transition: transform 200ms ease-in;
+}
+.play-list.show {
+  transform: translateY(0);
+}
+.play-list .head,
+.play-list .close-btn {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.86);
+}
+.close-btn {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+li {
+  height: 20px;
+  padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+li h3 {
+  color: rgba(0, 0, 0, 0.86);
+}
+li h3 span {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+}
+li.playing h3 {
+  color: rgba(255, 0, 0, 0.86);
+}
+li.playing h3 span {
+  color: rgba(255, 0, 0, 0.6);
+  font-size: 12px;
+}
